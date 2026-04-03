@@ -417,22 +417,9 @@ nav a:last-child {
   flex-direction: column;
 }
 
-/* ROZDĚLENÍ TEXTU NA BLOKY */
-.about-block-1 {
-  order: 1;
-}
-
-.about-image {
-  order: 2;
-}
-
-.about-block-2 {
-  order: 3;
-}
-
-/* zrušení "úzkého sloupce" */
 .about-text {
   width: 100%;
+  display: contents;
 }
 
 /* lepší spacing */
@@ -449,6 +436,9 @@ nav a:last-child {
   height: 260px;
   object-fit: cover;
 }
+  .about-block-1 { order: 1; }
+.about-image { order: 2; }
+.about-block-2 { order: 3; }
 }
 
 .logo {
