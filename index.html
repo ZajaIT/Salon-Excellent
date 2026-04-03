@@ -405,6 +405,30 @@ nav a:hover {
 nav a:last-child {
   border-bottom: none;
 }
+
+  /* O NAS - správné mobilní pořadí */
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* schovej desktop obrázek jen na mobilu */
+.about-image {
+  display: none;
+}
+
+/* mobilní obrázek */
+.about-image-mobile {
+  display: block;
+  margin: 30px 0;
+}
+
+.about-image-mobile img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+}
 }
 
 .logo {
@@ -1153,35 +1177,43 @@ body {
     </div>
 
     <div class="about-text">
-      <h2>O nás</h2>
+  <h2>O nás</h2>
 
-      <p>
-        Salon Excellent založily v roce 1999 Danuta Mauritz a Pavlína Smetanová.<br>
-        Naším cílem bylo vytvořit místo, kde se budou naši klienti cítit příjemně a kde jim poskytneme ty nejlepší služby.
-      </p>
+  <!-- TOP TEXT -->
+  <div class="about-top">
+    <p>
+      Salon Excellent založily v roce 1999 Danuta Mauritz a Pavlína Smetanová.<br>
+      Naším cílem bylo vytvořit místo, kde se budou naši klienti cítit příjemně a kde jim poskytneme ty nejlepší služby.
+    </p>
 
-      <p>
-        Od té doby jsme rozšířili nejen naše prostory, ale i kadeřnický tým, který se o vás s péčí stará každý den.
-      </p>
-
-      <h3>Neustále se vzděláváme</h3>
-
-      <p>
-        Vlasová móda se neustále vyvíjí, a proto držíme krok s aktuálními trendy.
-      </p>
-
-      <p>
-        Pravidelně se účastníme školení v zahraničí, kde získáváme nové zkušenosti a inspiraci.
-        Díky tomu vám můžeme nabídnout tu nejvyšší kvalitu služeb.
-      </p>
-
-      <p>
-        Naše diplomy a certifikáty si můžete prohlédnout přímo u nás v salónu.
-      </p>
-
-    </div>
-
+    <p>
+      Od té doby jsme rozšířili nejen naše prostory, ale i kadeřnický tým, který se o vás s péčí stará každý den.
+    </p>
   </div>
+
+  <!-- MOBILE IMAGE -->
+  <div class="about-image-mobile">
+    <img src="hair.jpg" alt="Ukázka práce salonu">
+  </div>
+
+  <!-- BOTTOM TEXT -->
+  <div class="about-bottom">
+    <h3>Neustále se vzděláváme</h3>
+
+    <p>
+      Vlasová móda se neustále vyvíjí, a proto držíme krok s aktuálními trendy.
+    </p>
+
+    <p>
+      Pravidelně se účastníme školení v zahraničí, kde získáváme nové zkušenosti a inspiraci.
+      Díky tomu vám můžeme nabídnout tu nejvyšší kvalitu služeb.
+    </p>
+
+    <p>
+      Naše diplomy a certifikáty si můžete prohlédnout přímo u nás v salónu.
+    </p>
+  </div>
+</div>
 </section>
 
 <!-- SLUŽBY -->
