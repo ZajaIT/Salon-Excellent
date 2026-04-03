@@ -298,6 +298,40 @@ footer {
 .header-buttons {
   justify-self: end;
 }
+  header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  justify-self: start;
+}
+
+.header-center {
+  justify-self: center;
+}
+
+.hamburger {
+  justify-self: end;
+  font-size: 26px;
+  cursor: pointer;
+  display: block;
+}
+
+.header-buttons {
+  display: none;
+}
+
+.logo img {
+  height: 32px;
+}
+
+.partner-logo img {
+  height: 24px;
+  opacity: 0.85;
+}
 }
 
 .logo {
@@ -984,9 +1018,11 @@ body {
   </nav>
 
   <div class="header-buttons">
-    <a href="#kontakt" class="btn btn-outline">Kde nás najdete</a>
-    <a href="#tym" class="btn btn-primary">Objednat se</a>
-  </div>
+  <a href="#kontakt" class="btn btn-outline">Kde nás najdete</a>
+  <a href="#tym" class="btn btn-primary">Objednat se</a>
+</div>
+
+<div class="hamburger">☰</div>
 </header>
 
 <!-- HERO -->
