@@ -531,6 +531,33 @@ nav a:last-child {
 .contact-phone a:hover::after {
   width: 0 !important;
 }
+
+/* DOSTUPNOST – mobil layout */
+.directions-grid {
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+/* zrušení vertikální čáry */
+.directions-grid > div:first-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+/* reset paddingu */
+.directions-grid > div:last-child {
+  padding-left: 0;
+}
+
+/* přidání horizontální čáry mezi bloky */
+.directions-grid > div:first-child {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 20px;
+}
+
+.directions-grid > div:last-child {
+  padding-top: 20px;
+}
 }
 
 .logo {
