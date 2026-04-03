@@ -29,10 +29,7 @@ body {
   line-height: 1.6;
 }
   body.menu-open {
-  position: fixed;
   overflow: hidden;
-  width: 100%;
-  left: 0;
 }
 
 /* HEADER */
@@ -221,10 +218,13 @@ footer {
   display: flex;
   flex-direction: column;
   background: white;
-  position: absolute;
+  position: fixed;
   top: 80px;
   left: 0;
   width: 100%;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 20px;
   gap: 20px;
 
@@ -1361,60 +1361,38 @@ sections.forEach(section => {
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('nav');
 
-let scrollY = 0;
-
 // TOGGLE MENU
 hamburger.addEventListener('click', function() {
   nav.classList.toggle('open');
 
   if (nav.classList.contains('open')) {
     hamburger.textContent = '✕';
-
-    scrollY = window.pageYOffset;
     document.body.classList.add('menu-open');
-    document.body.style.top = `-${scrollY}px`;
-
   } else {
     hamburger.textContent = '☰';
-
     document.body.classList.remove('menu-open');
-    document.body.style.top = '';
-
-    window.scrollTo({
-      top: scrollY
-    });
   }
 });
 
-// 1) klik mimo menu
+// klik mimo menu
 document.addEventListener('click', function(e) {
   if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
     document.body.classList.remove('menu-open');
-
-    document.body.style.top = '';
-    window.scrollTo({
-      top: scrollY
-    });
   }
 });
 
-// 2) klik na odkaz v menu
+// klik na odkaz
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
     document.body.classList.remove('menu-open');
-
-    document.body.style.top = '';
-    window.scrollTo({
-      top: scrollY
-    });
   });
 });
 
-// 3) swipe zavření
+// swipe zavření
 let touchStartX = 0;
 let touchStartY = 0;
 
@@ -1434,11 +1412,6 @@ document.addEventListener('touchend', function(e) {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
     document.body.classList.remove('menu-open');
-
-    document.body.style.top = '';
-    window.scrollTo({
-      top: scrollY
-    });
   }
 });
 </script>
