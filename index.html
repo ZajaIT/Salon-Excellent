@@ -219,23 +219,24 @@ footer {
   flex-direction: column;
   background: white;
   position: fixed;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 80px);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 20px;
-  gap: 20px;
+  top: 0;
+  right: 0;
 
-  transform: translateY(-20px);
-  opacity: 0;
+  width: 75%; /* ← šířka menu */
+  height: 100vh;
+
+  padding: 100px 25px 30px;
+  gap: 25px;
+
+  box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+
+  transform: translateX(100%);
+  opacity: 1;
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: transform 0.35s ease;
 }
   nav.open {
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateX(0);
   pointer-events: auto;
 }
 
@@ -354,6 +355,24 @@ footer {
   height: 24px;
   opacity: 0.85;
 }
+
+    body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    z-index: 999;
+  }
+
+  body.menu-open::after {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .logo {
