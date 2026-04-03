@@ -227,6 +227,11 @@ footer {
   pointer-events: none;
   transition: all 0.3s ease;
 }
+  nav.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
 
   .grid-3 {
     grid-template-columns: 1fr;
@@ -1351,12 +1356,12 @@ sections.forEach(section => {
 const nav = document.querySelector('nav');
 
 hamburger.addEventListener('click', function() {
-  if (nav.style.display === 'flex') {
-    nav.style.display = 'none';
-    hamburger.textContent = '☰';
-  } else {
-    nav.style.display = 'flex';
+  nav.classList.toggle('open');
+
+  if (nav.classList.contains('open')) {
     hamburger.textContent = '✕';
+  } else {
+    hamburger.textContent = '☰';
   }
 });
 
