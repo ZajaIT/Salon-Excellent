@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salon Excellent</title>
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #1c2333; /* tmavě modrá */
+  --light: #f7f7f7;
+  --white: #ffffff;
+  --accent: #c9a96e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--white);
+  color: #222;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.btn-outline {
+  border: 1px solid #222;
+  color: #222;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('excellent.png') center -30%/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  max-width: none;
+  margin: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(28, 35, 51, 0.65),
+    rgba(28, 35, 51, 0.4)
+  );
+}
+
+.hero > div {
+  position: relative;
+  z-index: 2;
+  will-change: transform, opacity;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* SECTIONS */
+section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-light {
+  background: linear-gradient(
+    180deg,
+    #f7f7f7 0%,
+    #f1f1f1 100%
+  );
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  padding: 30px;
+  background: white;
+  border: 1px solid #eee;
+}
+
+/* TEAM */
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* GALLERY */
+
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  background: var(--primary);
+  color: var(--accent);
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.footer-credit {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.footer-credit a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+.footer-credit a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.footer-credit a:hover {
+  opacity: 0.7;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+  font-size: 52px;
+  letter-spacing: 3px;
+}
+
+  .header-buttons {
+    display: none;
+  }
+
+.hero {
+    height: 90vh;
+    padding: 40px 20px;
+  }
+
+.about-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-image img {
+    height: 300px;
+  }
+
+.services-grid {
+  grid-template-columns: 1fr;
+}
+
+.team-minimal {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(232,220,199,0.97),
+      rgba(220,204,175,0.97),
+      rgba(239,228,210,0.97)
+    ),
+    url('nuzky.jpg') center / cover no-repeat;
+}
+
+.contact-wrapper {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.directions-grid {
+  grid-template-columns: 1fr;
+}
+
+.directions-grid > div:first-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.directions-grid > div:last-child {
+  padding-left: 0;
+}
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.logo a:hover img {
+  opacity: 0.7;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  color: var(--accent);
+  background: var(--primary);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+.hero-location {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+}
+
+.hero h1,
+.hero-subtitle,
+.hero-location {
+  color: white;
+}
+
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down:hover {
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, 8px);
+  }
+  60% {
+    transform: translate(-50%, 4px);
+  }
+}
+
+.partner-logo {
+  display: flex;
+  align-items: center;
+}
+
+.partner-logo img {
+  height: 36px; 
+  width: auto;
+  display: block;
+  opacity: 0.8;
+}
+
+/* HERO ANIMACE */
+
+.hero::before {
+  animation: fadeOverlay 1.2s ease forwards;
+}
+
+.hero h1 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.hero-location {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+/* KEYFRAMES */
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.intro {
+  padding: 40px 0; 
+  background: var(--light);
+  max-width: none;
+  margin: 0;
+}
+
+.intro-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.intro p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #222;
+}
+
+.intro p::first-line {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.about {
+  padding: 100px 20px;
+}
+
+.about-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-text h3 {
+  font-size: 20px;
+  margin: 30px 0 10px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* SCROLL ANIMACE O NAS */
+
+/* výchozí stav */
+.about-image,
+.about-text {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.about-image {
+  transform: translateX(-100px);
+}
+
+.about-text {
+  transform: translateX(100px);
+}
+
+/* aktivní stav po scrollu */
+.about.show .about-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about.show .about-text {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+/* SCROLL ANIMACE PRODUKT */
+
+.product-animate .product-text,
+.product-animate .product-image {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.product-animate .product-text {
+  transform: translateX(100px);
+}
+
+.product-animate .product-image {
+  transform: translateX(-100px);
+}
+
+.product-animate.show .product-text {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+.product-animate.show .product-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-main,
+.contact-info {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.contact-main {
+  transform: translateX(-100px);
+}
+
+.contact-info {
+  transform: translateX(100px);
+}
+
+.contact.show .contact-main {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact.show .contact-info {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+/* SLUŽBY */
+
+.services h2 {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.service-card {
+  padding: 50px 35px;
+  background: white;
+  border: none;
+  text-align: left;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+  border-radius: 8px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--primary);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-card li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.services {
+  max-width: none;
+  margin: 0;
+  padding: 100px 0 60px;
+}
+
+.services-note {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 16px;
+  color: #666;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.product-info {
+  background: white;
+  padding: 100px 20px;
+}
+
+.product-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.product-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.product-text p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.team-minimal {
+  text-align: center;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(232,220,199,0.88) 0%,
+      rgba(220,204,175,0.88) 40%,
+      rgba(239,228,210,0.88) 100%
+    ),
+    url('nuzky.jpg') right center / cover no-repeat;
+
+  max-width: none;
+  margin: 0;
+}
+
+.team-intro {
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.team-list {
+  max-width: 700px;
+  margin: auto;
+}
+
+.team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 10px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.team-row:hover {
+  background: rgba(0,0,0,0.07);
+  transform: translateX(6px);
+  backdrop-filter: blur(2px);
+}
+
+.team-row span {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.team-row span::before {
+  content: "✂";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #000;
+  opacity: 0.6;
+}
+
+.team-row a {
+  text-decoration: none;
+  font-size: 15px;
+  color: var(--primary); 
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.team-row a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px; /* silnější */
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.team-row:hover a {
+  color: var(--primary);
+  text-shadow: 0 0 8px rgba(201,169,110,0.25);
+}
+
+.team-row:hover a::after {
+  width: 100%;
+}
+
+.contact {
+  text-align: left;
+}
+
+.contact h2 {
+  text-align: center;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1000px;
+  margin: 60px auto;
+  align-items: center;
+}
+
+.contact-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.contact-phone a {
+  font-size: 20px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.contact-phone a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.contact-phone a:hover::after {
+  width: 100%;
+}
+
+.contact-note {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.contact-note a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-hours {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.contact-info p {
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.contact-extra {
+  font-size: 14px;
+  color: #666;
+}
+
+.map {
+  margin-top: 60px;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.map.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-directions {
+  margin: 60px 0 0;
+
+  padding: 80px 20px;
+  background: #2a3448;
+
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50vw);
+  width: 100vw;
+}
+
+.contact-directions h3,
+.contact-directions > p {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-directions h3 {
+  margin-bottom: 20px;
+}
+
+.directions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 20px;
+
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.directions-grid > div:first-child {
+  border-right: 1px solid rgba(255,255,255,0.2);
+  padding-right: 30px;
+}
+
+.directions-grid > div:last-child {
+  padding-left: 30px;
+}
+
+.directions-grid h4 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: var(--accent); 
+  letter-spacing: 1px;
+}
+
+.contact-main,
+.contact-info {
+  background: #fff;
+  padding: 30px 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.contact-main {
+  border-left: 3px solid var(--accent);
+}
+
+.contact-info {
+  border-left: 3px solid var(--accent);
+}
+
+.contact-directions h3,
+.contact-directions p,
+.contact-directions h4 {
+  color: white;
+}
+
+.contact-directions p {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+}
+
+.contact {
+  padding-bottom: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+  <a href="#hero">
+    <img src="logo.jpg" alt="Salon Excellent">
+  </a>
+</div>
+
+<div class="partner-logo">
+  <img src="loreal.jpg" alt="L'Oréal">
+</div>
+
+  <nav>
+  <a href="#hero">Domů</a>
+  <a href="#onas">O nás</a>
+  <a href="#sluzby">Služby</a>
+  <a href="#tym">Náš tým</a>
+  <a href="#kontakt">Kontakt</a>
+</nav>
+
+  <div class="header-buttons">
+    <a href="#kontakt" class="btn btn-outline">Kde nás najdete</a>
+    <a href="#tym" class="btn btn-primary">Objednat se</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<!-- HERO (FULL WIDTH) -->
+<section id="hero" class="hero">
+  <div>
+    <h1>SALON EXCELLENT</h1>
+
+<p class="hero-subtitle">
+  Přijďte si k nám vychutnat profesionální péči s kvalitní kosmetikou L'Oréal Professionnel.
+</p>
+
+<p class="hero-location">
+  Prémiový kadeřnický salon v srdci hotelu STEEL HOUSE Třinec
+</p>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="intro-inner">
+    <p>
+      Krása začíná péčí.<br>
+      Zastavte se u nás a svěřte své vlasy do rukou profesionálů.<br>
+      Těšíme se na Vaši návštěvu v kadeřnictví Excellent.
+    </p>
+  </div>
+</section>
+
+<a href="#onas" class="scroll-down">
+  &#8595;
+</a>
+
+<!-- O NÁS -->
+<section id="onas" class="about">
+  <div class="about-wrapper">
+
+    <div class="about-image">
+      <img src="hair.jpg" alt="Ukázka práce salonu">
+    </div>
+
+    <div class="about-text">
+      <h2>O nás</h2>
+
+      <p>
+        Salon Excellent založily v roce 1999 Danuta Mauritz a Pavlína Smetanová.<br>
+        Naším cílem bylo vytvořit místo, kde se budou naši klienti cítit příjemně a kde jim poskytneme ty nejlepší služby.
+      </p>
+
+      <p>
+        Od té doby jsme rozšířili nejen naše prostory, ale i kadeřnický tým, který se o vás s péčí stará každý den.
+      </p>
+
+      <h3>Neustále se vzděláváme</h3>
+
+      <p>
+        Vlasová móda se neustále vyvíjí, a proto držíme krok s aktuálními trendy.
+      </p>
+
+      <p>
+        Pravidelně se účastníme školení v zahraničí, kde získáváme nové zkušenosti a inspiraci.
+        Díky tomu vám můžeme nabídnout tu nejvyšší kvalitu služeb.
+      </p>
+
+      <p>
+        Naše diplomy a certifikáty si můžete prohlédnout přímo u nás v salónu.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SLUŽBY -->
+<section id="sluzby" class="section-light services">
+  <h2>Služby</h2>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <h3>Pro dámy</h3>
+      <ul>
+        <li>Barvení a střih</li>
+        <li>Společenské i denní účesy</li>
+        <li>Tónování a melíry</li>
+        <li>Samoaplikační prodlužování vlasů</li>
+        <li>Regenerace vlasů</li>
+       </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>Pro pány</h3>
+      <ul>
+        <li>Moderní střih</li>
+        <li>Barvení</li>
+        <li>Úprava vousů</li>
+        <li>Styling</li>
+        <li>Masáž hlavy</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>Pro děti</h3>
+      <ul>
+        <li>Dětský střih</li>
+        <li>Drobné barvení</li>
+        <li>Šetrná péče</li>
+        <li>Přátelský přístup</li>
+        <li>Malý dětský koutek</li>
+      </ul>
+    </div>
+
+  </div>
+<p class="services-note">
+  Kompletní nabídku služeb a aktuální ceník vám rádi představíme přímo v salonu.
+</p>
+</section>
+
+<section class="product-info product-animate">
+
+  <div class="product-wrapper">
+
+    <div class="product-text">
+      <h2>Profesionální vlasová péče na míru</h2>
+
+      <p>
+  Pracujeme výhradně s produkty značky <strong>L’Oréal Professionnel</strong>, které patří ke špičce v oboru.
+</p>
+
+      <p>
+        Rádi vám poradíme s výběrem té nejvhodnější péče přesně pro vaše vlasy.
+      </p>
+
+      <p>
+        Vybrané produkty si navíc můžete zakoupit přímo u nás v salonu.
+      </p>
+    </div>
+
+    <div class="product-image">
+      <img src="loreal-produkt.jpg" alt="L'Oréal Professionnel">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- NÁŠ TÝM -->
+<section id="tym" class="team-minimal">
+  <h2>Naše vlasové specialistky</h2>
+
+  <div class="team-list">
+
+    <div class="team-row">
+      <span>Danuta Mauritz</span>
+      <a href="tel:+420775229967">+420 775 229 967</a>
+    </div>
+
+    <div class="team-row">
+      <span>Pavlína Smetanová</span>
+      <a href="tel:+420777018120">+420 777 018 120</a>
+    </div>
+
+    <div class="team-row">
+      <span>Edita Smetanková</span>
+      <a href="tel:+420605820438">+420 605 820 438</a>
+    </div>
+
+    <div class="team-row">
+      <span>Kateřina Lysková</span>
+      <a href="tel:+420608170207">+420 608 170 207</a>
+    </div>
+
+    <div class="team-row">
+      <span>Marie Kajzarová</span>
+      <a href="tel:+420739651154">+420 739 651 154</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALERIE -->
+
+
+<!-- KONTAKT -->
+<section id="kontakt" class="contact">
+
+  <h2>Kontakt</h2>
+
+  <div class="contact-wrapper">
+
+    <!-- LEVÁ STRANA -->
+    <div class="contact-main">
+
+      <p class="contact-title">Kadeřnictví Excellent Třinec</p>
+
+      <p class="contact-phone">
+        <a href="tel:+420556200302">+420 556 200 302</a>
+      </p>
+
+      <p class="contact-note">
+        nebo zavolejte přímo své kadeřnici →
+        <a href="#tym">zobrazit tým</a>
+      </p>
+
+      <p class="contact-hours">
+        <strong>Otevírací doba:</strong><br>
+        Pondělí – Neděle dle objednávek
+      </p>
+
+    </div>
+
+    <!-- PRAVÁ STRANA -->
+    <div class="contact-info">
+
+      <p>
+        <strong>Adresa:</strong><br>
+        Kadeřnictví EXCELLENT Třinec<br>
+        Nám. Svobody 524<br>
+        Třinec 739 61
+      </p>
+
+      <p class="contact-extra">
+  <strong>Sídlíme ve 3. patře Hotelu STEEL – dveře 302</strong>
+</p>
+
+    </div>
+
+  </div>
+
+  <!-- MAPA -->
+  <div class="map">
+    <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2582.2024296125855!2d18.67247607543053!3d49.66932544329946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4714054ff69762e3%3A0x1bd7407254beecb!2zS2FkZcWZbmlja8O9IHNhbMOzbiBFeGNlbGxlbnQ!5e0!3m2!1scs!2shr!4v1775144500750!5m2!1scs!2shr"
+  width="100%" 
+  height="350" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+  </div>
+
+  <!-- DOSTUPNOST -->
+  <div class="contact-directions">
+
+    <h3>Jak se k nám dostat?</h3>
+
+    <p>
+      Jedete k nám poprvé? Nebojte se! Najít naše kadeřnictví nebude žádný problém.
+      Nacházíme se v centru města a určitě nás nepřehlédnete.
+    </p>
+
+    <div class="directions-grid">
+
+      <div>
+        <h4>Jedu autem</h4>
+        <p>
+          Kadeřnictví Excellent se nachází na náměstí Svobody v budově Hotelu Steel.
+          Zaparkovat můžete přímo před hotelem nebo využijte podzemní garáže hypermarketu Albert,
+          který se nachází přes ulici.
+        </p>
+      </div>
+
+      <div>
+        <h4>MHD</h4>
+        <p>
+          Pokud využijete jeden z červených autobusů MHD, vystupte na stanici
+          „Lyžbice Terasa kino Kosmos“. Náš salón najdete v Hotelu Steel.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© Salon Excellent</p>
+  <p class="footer-credit">
+    Designed by <a href="https://www.zajait.cz" target="_blank">ZajaIT</a>
+  </p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.about, .product-animate, .contact, .map');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+</script>
+
+</body>
+</html>
