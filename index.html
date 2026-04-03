@@ -1360,8 +1360,10 @@ hamburger.addEventListener('click', function() {
 
   if (nav.classList.contains('open')) {
     hamburger.textContent = '✕';
+    document.body.style.overflow = 'hidden';
   } else {
     hamburger.textContent = '☰';
+    document.body.style.overflow = '';
   }
 });
 
