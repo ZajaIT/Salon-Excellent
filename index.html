@@ -1372,14 +1372,17 @@ document.addEventListener('click', function(e) {
   if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
+    document.body.style.overflow = '';
   }
 });
 
+// 2) zavření po kliknutí na položku
 // 2) zavření po kliknutí na položku
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
+    document.body.style.overflow = '';
   });
 });
 
@@ -1400,14 +1403,16 @@ document.addEventListener('touchend', function(e) {
   let diffY = touchEndY - touchStartY;
 
   // swipe zleva doprava
-  if (diffX > 70) {
+ if (diffX > 70) {
   nav.classList.remove('open');
   hamburger.textContent = '☰';
+  document.body.style.overflow = '';
 }
 
 if (diffY < -70) {
   nav.classList.remove('open');
   hamburger.textContent = '☰';
+  document.body.style.overflow = '';
 }
 });
 </script>
