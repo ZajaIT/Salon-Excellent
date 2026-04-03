@@ -266,9 +266,30 @@ footer {
   }
 
 .about-wrapper {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.about-text,
+.about-image {
+  width: 100%;
+  max-width: 100%;
+}
+
+.about-text {
+  padding: 0 10px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.about-image img {
+  height: 260px;
+  object-fit: cover;
+}
 
   .about-image img {
     height: 300px;
