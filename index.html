@@ -560,6 +560,19 @@ nav a:last-child {
 .directions-grid > div:last-child {
   padding-top: 20px;
 }
+  /* KONTAKT – vypnutí animace karet na mobilu */
+.contact-main,
+.contact-info {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.contact.show .contact-main,
+.contact.show .contact-info {
+  opacity: 1 !important;
+  transform: none !important;
+}
 }
 
 .logo {
