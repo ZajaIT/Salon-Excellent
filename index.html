@@ -1366,20 +1366,11 @@ hamburger.addEventListener('click', function() {
 
   if (nav.classList.contains('open')) {
     hamburger.textContent = '✕';
-
-    scrollY = window.scrollY;
     document.body.classList.add('menu-open');
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.position = 'fixed';
 
   } else {
     hamburger.textContent = '☰';
-
     document.body.classList.remove('menu-open');
-    document.body.style.position = '';
-    document.body.style.top = '';
-
-    window.scrollTo(0, scrollY);
   }
 });
 
@@ -1389,10 +1380,6 @@ document.addEventListener('click', function(e) {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
     document.body.classList.remove('menu-open');
-
-    document.body.style.position = '';
-    document.body.style.top = '';
-    window.scrollTo(0, scrollY);
   }
 });
 
@@ -1402,10 +1389,6 @@ document.querySelectorAll('nav a').forEach(link => {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
     document.body.classList.remove('menu-open');
-
-    document.body.style.position = '';
-    document.body.style.top = '';
-    window.scrollTo(0, scrollY);
   });
 });
 
@@ -1430,20 +1413,12 @@ document.addEventListener('touchend', function(e) {
   nav.classList.remove('open');
   hamburger.textContent = '☰';
   document.body.classList.remove('menu-open');
-
-  document.body.style.position = '';
-  document.body.style.top = '';
-  window.scrollTo(0, scrollY);
 }
 
 if (diffY < -70) {
   nav.classList.remove('open');
   hamburger.textContent = '☰';
   document.body.classList.remove('menu-open');
-
-  document.body.style.position = '';
-  document.body.style.top = '';
-  window.scrollTo(0, scrollY);
 }
 });
 </script>
