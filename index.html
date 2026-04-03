@@ -1368,7 +1368,7 @@ hamburger.addEventListener('click', function() {
   // 1) zavření při kliknutí mimo menu
 document.addEventListener('click', function(e) {
   if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-    nav.style.display = 'none';
+    nav.classList.remove('open');
     hamburger.textContent = '☰';
   }
 });
@@ -1376,7 +1376,7 @@ document.addEventListener('click', function(e) {
 // 2) zavření po kliknutí na položku
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
-    nav.style.display = 'none';
+    nav.classList.remove('open');
     hamburger.textContent = '☰';
   });
 });
@@ -1399,15 +1399,14 @@ document.addEventListener('touchend', function(e) {
 
   // swipe zleva doprava
   if (diffX > 70) {
-    nav.style.display = 'none';
-    hamburger.textContent = '☰';
-  }
+  nav.classList.remove('open');
+  hamburger.textContent = '☰';
+}
 
-  // swipe zdola nahoru
-  if (diffY < -70) {
-    nav.style.display = 'none';
-    hamburger.textContent = '☰';
-  }
+if (diffY < -70) {
+  nav.classList.remove('open');
+  hamburger.textContent = '☰';
+}
 });
 </script>
 
