@@ -533,25 +533,27 @@ nav a:last-child {
 }
 
 /* DOSTUPNOST – mobil layout */
+/* DOSTUPNOST – mobil (force fix) */
 .directions-grid {
-  grid-template-columns: 1fr;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
   gap: 25px;
 }
 
-/* zrušení vertikální čáry */
+/* zrušení svislé čáry */
 .directions-grid > div:first-child {
-  border-right: none;
-  padding-right: 0;
+  border-right: none !important;
+  padding-right: 0 !important;
 }
 
-/* reset paddingu */
+/* reset */
 .directions-grid > div:last-child {
-  padding-left: 0;
+  padding-left: 0 !important;
 }
 
-/* přidání horizontální čáry mezi bloky */
+/* horizontální čára */
 .directions-grid > div:first-child {
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2) !important;
   padding-bottom: 20px;
 }
 
