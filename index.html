@@ -1346,7 +1346,11 @@ sections.forEach(section => {
 const nav = document.querySelector('nav');
 
 hamburger.addEventListener('click', function() {
-  nav.style.display = 'flex';
+  if (nav.style.display === 'flex') {
+    nav.style.display = 'none';
+  } else {
+    nav.style.display = 'flex';
+  }
 });
 </script>
 
