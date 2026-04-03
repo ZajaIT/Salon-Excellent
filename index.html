@@ -278,6 +278,26 @@ footer {
   html, body {
   overflow-x: hidden;
 }
+  header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+/* LEVÁ STRANA */
+.logo {
+  justify-self: start;
+}
+
+/* STŘED */
+.header-center {
+  justify-self: center;
+}
+
+/* PRAVÁ STRANA (zatím prázdná) */
+.header-buttons {
+  justify-self: end;
+}
 }
 
 .logo {
@@ -944,22 +964,24 @@ body {
 <!-- HEADER -->
 <header>
   <div class="logo">
-  <a href="#hero">
-    <img src="logo.jpg" alt="Salon Excellent">
-  </a>
-</div>
+    <a href="#hero">
+      <img src="logo.jpg" alt="Salon Excellent">
+    </a>
+  </div>
 
-<div class="partner-logo">
-  <img src="loreal.jpg" alt="L'Oréal">
-</div>
+  <div class="header-center">
+    <div class="partner-logo">
+      <img src="loreal.jpg" alt="L'Oréal">
+    </div>
+  </div>
 
   <nav>
-  <a href="#hero">Domů</a>
-  <a href="#onas">O nás</a>
-  <a href="#sluzby">Služby</a>
-  <a href="#tym">Náš tým</a>
-  <a href="#kontakt">Kontakt</a>
-</nav>
+    <a href="#hero">Domů</a>
+    <a href="#onas">O nás</a>
+    <a href="#sluzby">Služby</a>
+    <a href="#tym">Náš tým</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
 
   <div class="header-buttons">
     <a href="#kontakt" class="btn btn-outline">Kde nás najdete</a>
