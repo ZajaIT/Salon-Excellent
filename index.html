@@ -523,6 +523,14 @@ nav a:last-child {
 .team-row a {
   margin-top: 5px;
 }
+  /* KONTAKT – vypnutí hover efektů na mobilu */
+.contact-phone a::after {
+  display: none !important;
+}
+
+.contact-phone a:hover::after {
+  width: 0 !important;
+}
 }
 
 .logo {
