@@ -475,6 +475,19 @@ nav a:last-child {
   opacity: 1 !important;
   transform: none !important;
 }
+  /* PRODUCT – vypnutí animací na mobilu */
+.product-animate .product-text,
+.product-animate .product-image {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.product-animate.show .product-text,
+.product-animate.show .product-image {
+  opacity: 1 !important;
+  transform: none !important;
+}
 }
 
 .logo {
