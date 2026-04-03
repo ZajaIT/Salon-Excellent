@@ -29,7 +29,9 @@ body {
   line-height: 1.6;
 }
   body.menu-open {
+  position: fixed;
   overflow: hidden;
+  width: 100%;
 }
 
 /* HEADER */
@@ -1365,11 +1367,18 @@ hamburger.addEventListener('click', function() {
 
   if (nav.classList.contains('open')) {
     hamburger.textContent = '✕';
+
+    scrollY = window.scrollY;
     document.body.classList.add('menu-open');
+    document.body.style.top = `-${scrollY}px`;
 
   } else {
     hamburger.textContent = '☰';
+
     document.body.classList.remove('menu-open');
+    document.body.style.top = '';
+
+    window.scrollTo(0, scrollY);
   }
 });
 
@@ -1379,6 +1388,9 @@ document.addEventListener('click', function(e) {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
     document.body.classList.remove('menu-open');
+
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY);
   }
 });
 
@@ -1388,6 +1400,9 @@ document.querySelectorAll('nav a').forEach(link => {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
     document.body.classList.remove('menu-open');
+
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY);
   });
 });
 
@@ -1407,18 +1422,14 @@ document.addEventListener('touchend', function(e) {
   let diffX = touchEndX - touchStartX;
   let diffY = touchEndY - touchStartY;
 
-  // swipe zleva doprava
- if (diffX > 70) {
-  nav.classList.remove('open');
-  hamburger.textContent = '☰';
-  document.body.classList.remove('menu-open');
-}
+  if (diffX > 70 || diffY < -70) {
+    nav.classList.remove('open');
+    hamburger.textContent = '☰';
+    document.body.classList.remove('menu-open');
 
-if (diffY < -70) {
-  nav.classList.remove('open');
-  hamburger.textContent = '☰';
-  document.body.classList.remove('menu-open');
-}
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY);
+  }
 });
 </script>
 
