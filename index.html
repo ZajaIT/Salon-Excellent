@@ -1021,6 +1021,9 @@ body {
     display: block !important;
   }
 }
+  body.menu-open {
+  overflow: hidden;
+}
 
 </style>
 </head>
@@ -1361,6 +1364,31 @@ const nav = document.querySelector('nav');
 
 hamburger.addEventListener('click', () => {
   nav.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
+
+  if (nav.classList.contains('active')) {
+    hamburger.textContent = "✕";
+  } else {
+    hamburger.textContent = "☰";
+  }
+});
+
+  const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+    hamburger.textContent = "☰";
+    document.body.classList.remove('menu-open'); 
+  });
+});
+
+  nav.addEventListener('click', (e) => {
+  if (e.target === nav) {
+    nav.classList.remove('active');
+    hamburger.textContent = "☰";
+    document.body.classList.remove('menu-open'); 
+  }
 });
 </script>
 
