@@ -453,6 +453,19 @@ nav a:last-child {
   height: 260px;
   object-fit: cover;
 }
+  /* O NÁS – vypnutí animací na mobilu */
+.about-image,
+.about-text {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.about.show .about-image,
+.about.show .about-text {
+  opacity: 1 !important;
+  transform: none !important;
+}
 }
 
 .logo {
