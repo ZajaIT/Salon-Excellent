@@ -28,6 +28,10 @@ body {
   color: #222;
   line-height: 1.6;
 }
+  body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+}
 
 /* HEADER */
 header {
@@ -1357,13 +1361,12 @@ const nav = document.querySelector('nav');
 
 hamburger.addEventListener('click', function() {
   nav.classList.toggle('open');
+  document.body.classList.toggle('menu-open');
 
   if (nav.classList.contains('open')) {
     hamburger.textContent = '✕';
-    document.body.style.overflow = 'hidden';
   } else {
     hamburger.textContent = '☰';
-    document.body.style.overflow = '';
   }
 });
 
@@ -1372,7 +1375,7 @@ document.addEventListener('click', function(e) {
   if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
   }
 });
 
@@ -1382,7 +1385,7 @@ document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
     hamburger.textContent = '☰';
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
   });
 });
 
@@ -1406,13 +1409,13 @@ document.addEventListener('touchend', function(e) {
  if (diffX > 70) {
   nav.classList.remove('open');
   hamburger.textContent = '☰';
-  document.body.style.overflow = '';
+  document.body.classList.remove('menu-open');
 }
 
 if (diffY < -70) {
   nav.classList.remove('open');
   hamburger.textContent = '☰';
-  document.body.style.overflow = '';
+  document.body.classList.remove('menu-open');
 }
 });
 </script>
