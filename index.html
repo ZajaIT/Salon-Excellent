@@ -1354,6 +1354,51 @@ hamburger.addEventListener('click', function() {
     hamburger.textContent = '✕';
   }
 });
+
+  // 1) zavření při kliknutí mimo menu
+document.addEventListener('click', function(e) {
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.style.display = 'none';
+    hamburger.textContent = '☰';
+  }
+});
+
+// 2) zavření po kliknutí na položku
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.style.display = 'none';
+    hamburger.textContent = '☰';
+  });
+});
+
+// 3 + 4) swipe (jednoduchá verze)
+let touchStartX = 0;
+let touchStartY = 0;
+
+document.addEventListener('touchstart', function(e) {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+});
+
+document.addEventListener('touchend', function(e) {
+  let touchEndX = e.changedTouches[0].screenX;
+  let touchEndY = e.changedTouches[0].screenY;
+
+  let diffX = touchEndX - touchStartX;
+  let diffY = touchEndY - touchStartY;
+
+  // swipe zleva doprava
+  if (diffX > 70) {
+    nav.style.display = 'none';
+    hamburger.textContent = '☰';
+  }
+
+  // swipe zdola nahoru
+  if (diffY < -70) {
+    nav.style.display = 'none';
+    hamburger.textContent = '☰';
+  }
+});
 </script>
 
 </body>
