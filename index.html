@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -474,21 +475,12 @@ nav a:last-child {
   height: auto !important;
   object-fit: contain !important;
 }
-  
-@media (max-width: 768px) {
-
-  .about-image,
-  .about-text {
-    opacity: 0;
-    transform: none !important; 
-    transition: opacity 0.6s ease;
-  }
-
-  .about.show .about-image,
-  .about.show .about-text {
-    opacity: 1;
-  }
-
+  /* O NÁS – vypnutí animací na mobilu */
+.about-image,
+.about-text {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .about.show .about-image,
@@ -1711,7 +1703,7 @@ window.addEventListener('load', () => {
   window.scrollTo(0, 0);
 });
   
-const sections = document.querySelectorAll('.about-text, .about-image, .product-animate, .contact, .map');
+const sections = document.querySelectorAll('.about, .product-animate, .contact, .map');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1720,7 +1712,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.5
+  threshold: 0.3
 });
 
 sections.forEach(section => {
