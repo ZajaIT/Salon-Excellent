@@ -1049,13 +1049,26 @@ html {
   border-radius: 6px;
 }
   @media (min-width: 769px) {
+  .team-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .team-row {
-    justify-content: flex-start;
-    gap: 20px;
+    justify-content: center; /* centrování */
+    gap: 60px; /* větší mezera mezi jménem a číslem */
+    width: 100%;
+    max-width: 500px; /* aby to nebylo moc roztažené */
   }
 
   .team-row span {
-    min-width: 200px;
+    min-width: auto;
+    text-align: right;
+  }
+
+  .team-row a {
+    text-align: left;
   }
 }
 
