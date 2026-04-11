@@ -1332,19 +1332,20 @@ body {
   margin-top: 20px;
   font-size: 13px;
   line-height: 1.6;
-  color: rgba(201,169,110,0.85); /* lehce jemnější než hlavní text */
+  color: rgba(201,169,110,0.85); 
 }
 
 .footer-company p {
   margin: 2px 0;
 }
-  .mobile-break {
-  display: none;
-}
+  @media (max-width: 768px) {
+  .footer-company .ico,
+  .footer-company .sidlo {
+    display: block;
+  }
 
-@media (max-width: 768px) {
-  .mobile-break {
-    display: inline;
+  .footer-company .sidlo {
+    margin-top: 2px;
   }
 }
 
@@ -1669,8 +1670,10 @@ body {
   <div class="footer-company">
   <p>Danuta Mauritzová</p>
   <p>
-  IČO: 47642670 | Sídlo: Staré Město 765,<br class="mobile-break">
-  739 61 Třinec
+  <span class="ico">IČO: 47642670</span>
+  <span class="sidlo"> | Sídlo: Staré Město 765, 739 61 Třinec</span>
+</p>
+  
 </p>
   <p>Zapsaná v živnostenském rejstříku</p>
 </div>
