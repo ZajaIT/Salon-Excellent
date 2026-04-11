@@ -1687,6 +1687,14 @@ body {
 </footer>
 
 <script>
+  if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
+  
 const sections = document.querySelectorAll('.about, .product-animate, .contact, .map');
 
 const observer = new IntersectionObserver((entries) => {
