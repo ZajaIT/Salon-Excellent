@@ -908,9 +908,9 @@ html {
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 
   max-width: 1200px;
   margin: auto;
@@ -921,7 +921,7 @@ html {
   padding: 50px 35px;
   background: white;
   border: none;
-  text-align: left;
+  text-align: center;
 
   box-shadow: 0 15px 40px rgba(0,0,0,0.04);
   border-radius: 8px;
@@ -932,7 +932,7 @@ html {
   margin-bottom: 20px;
   color: var(--primary);
   border-bottom: 2px solid var(--accent);
-  display: inline-block;
+  display: block;
   padding-bottom: 6px;
 }
 
@@ -945,6 +945,7 @@ html {
   margin-bottom: 10px;
   font-size: 15px;
   color: #444;
+  text-align: center;
 }
 
 .services {
@@ -1493,40 +1494,55 @@ body {
 
   <div class="services-grid">
 
-    <div class="service-card">
-      <h3>Pro dámy</h3>
-      <ul>
-        <li>Barvení a střih</li>
-        <li>Společenské i denní účesy</li>
-        <li>Tónování a melíry</li>
-        <li>Samoaplikační prodlužování vlasů</li>
-        <li>Regenerace vlasů</li>
-       </ul>
-    </div>
-
-    <div class="service-card">
-      <h3>Pro pány</h3>
-      <ul>
-        <li>Moderní střih</li>
-        <li>Barvení</li>
-        <li>Úprava vousů</li>
-        <li>Styling</li>
-        <li>Masáž hlavy</li>
-      </ul>
-    </div>
-
-    <div class="service-card">
-      <h3>Pro děti</h3>
-      <ul>
-        <li>Dětský střih</li>
-        <li>Drobné barvení</li>
-        <li>Šetrná péče</li>
-        <li>Přátelský přístup</li>
-        <li>Malý dětský koutek</li>
-      </ul>
-    </div>
-
+  <div class="service-card">
+    <h3>Pro dámy</h3>
+    <ul>
+      <li>Barvení a střih</li>
+      <li>Společenské i denní účesy</li>
+      <li>Tónování a melíry</li>
+      <li>Samoaplikační prodlužování vlasů</li>
+      <li>Regenerace vlasů</li>
+    </ul>
   </div>
+
+  <div class="service-card">
+    <h3>Pro pány</h3>
+    <ul>
+      <li>Moderní střih</li>
+      <li>Barvení</li>
+      <li>Úprava vousů</li>
+      <li>Styling</li>
+      <li>Masáž hlavy</li>
+    </ul>
+  </div>
+
+  <div class="service-card">
+    <h3>Pro děti</h3>
+    <ul>
+      <li>Dětský střih</li>
+      <li>Drobné barvení</li>
+      <li>Šetrná péče</li>
+      <li>Přátelský přístup</li>
+      <li>Malý dětský koutek</li>
+    </ul>
+  </div>
+
+  <!-- DOPLŇ DALŠÍ 2 KATEGORIE -->
+  <div class="service-card">
+    <h3>Další kategorie</h3>
+    <ul>
+      <li>...</li>
+    </ul>
+  </div>
+
+  <div class="service-card">
+    <h3>Další kategorie</h3>
+    <ul>
+      <li>...</li>
+    </ul>
+  </div>
+
+</div>
 <p class="services-note">
   Kompletní nabídku služeb a aktuální ceník vám rádi představíme přímo v salonu.
 </p>
