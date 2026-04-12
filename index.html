@@ -579,14 +579,14 @@ nav a:last-child {
 .about-text.mobile-animate,
 .about-image.mobile-animate {
   opacity: 0;
-  transform: scale(0.9);
+  transform: translateY(40px);
   transition: all 0.7s ease;
 }
 
 .about-text.mobile-animate.show,
 .about-image.mobile-animate.show {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0);
 }
 }
   @media (min-width: 769px) {
@@ -1802,7 +1802,7 @@ window.addEventListener('load', () => {
   window.scrollTo(0, 0);
 });
   
-const sections = document.querySelectorAll('.mobile-animate, .about, .product-animate, .contact, .map');
+const sections = document.querySelectorAll('.mobile-animate');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
