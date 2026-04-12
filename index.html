@@ -832,18 +832,20 @@ html {
 /* SCROLL ANIMACE O NAS */
 
 /* výchozí stav */
-.about-image,
-.about-text {
-  opacity: 0;
-  transition: all 1s ease;
-}
+@media (min-width: 769px) {
+  .about-image,
+  .about-text {
+    opacity: 0;
+    transition: all 1s ease;
+  }
 
-.about-image {
-  transform: translateX(-100px);
-}
+  .about-image {
+    transform: translateX(-100px);
+  }
 
-.about-text {
-  transform: translateX(100px);
+  .about-text {
+    transform: translateX(100px);
+  }
 }
 
 /* aktivní stav po scrollu */
