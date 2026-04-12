@@ -570,8 +570,12 @@ nav a:last-child {
   transition: all 0.s ease;
 }
   .about-text.mobile-animate {
-  transform: translateY(80px);
+  transform: translateY(80px) scale(0.95);
   transition: all 1s ease;
+}
+
+.about-text.mobile-animate.show {
+  transform: translateY(0) scale(1);
 }
 
 /* když se aktivuje */
