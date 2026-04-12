@@ -589,6 +589,19 @@ nav a:last-child {
   display: block;
   margin-top: 5px;
 }
+  /* MOBILE ANIMACE */
+
+.mobile-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+/* když se aktivuje */
+.mobile-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 }
   @media (min-width: 769px) {
   .services .services-grid {
@@ -1502,11 +1515,11 @@ body {
 <section id="onas" class="about">
   <div class="about-wrapper">
 
-    <div class="about-image">
+    <div class="about-image mobile-animate">
       <img src="nasteam.jpeg" alt="Ukázka práce salonu">
     </div>
 
-    <div class="about-text">
+    <div class="about-text mobile-animate">
 
   <!-- BLOK 1 -->
   <div class="about-block about-block-1">
@@ -1606,7 +1619,7 @@ body {
 
   <div class="product-wrapper">
 
-    <div class="product-text">
+    <div class="product-text mobile-animate">
       <h2>Profesionální vlasová péče na míru</h2>
 
       <p>
@@ -1622,7 +1635,7 @@ body {
       </p>
     </div>
 
-    <div class="product-image">
+    <div class="product-image mobile-animate">
       <img src="loreal-produkt.jpg" alt="L'Oréal Professionnel">
     </div>
 
@@ -1682,7 +1695,7 @@ body {
   <div class="contact-wrapper">
 
     <!-- LEVÁ STRANA -->
-    <div class="contact-main">
+    <div class="contact-main mobile-animate">
 
       <p class="contact-title">Kadeřnictví Excellent Třinec</p>
 
@@ -1703,7 +1716,7 @@ body {
     </div>
 
     <!-- PRAVÁ STRANA -->
-    <div class="contact-info">
+    <div class="contact-info mobile-animate">
 
       <p>
         <strong>Adresa:</strong><br>
@@ -1720,7 +1733,7 @@ body {
 
   </div>
 
-  <p class="contact-facebook">
+  <p class="contact-facebook mobile-animate">
   <a href="https://www.facebook.com/SalonExcellent" target="_blank">
     <span class="fb-icon">f</span>
     Najdete nás na Facebooku
@@ -1728,7 +1741,7 @@ body {
 </p>
   
   <!-- MAPA -->
-  <div class="map">
+  <div class="map mobile-animate">
     <iframe 
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2582.2024296125855!2d18.67247607543053!3d49.66932544329946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4714054ff69762e3%3A0x1bd7407254beecb!2zS2FkZcWZbmlja8O9IHNhbMOzbiBFeGNlbGxlbnQ!5e0!3m2!1scs!2shr!4v1775144500750!5m2!1scs!2shr"
   width="100%" 
@@ -1803,7 +1816,7 @@ window.addEventListener('load', () => {
   window.scrollTo(0, 0);
 });
   
-const sections = document.querySelectorAll('.about, .product-animate, .contact, .map');
+const sections = document.querySelectorAll('.mobile-animate, .about, .product-animate, .contact, .map');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
