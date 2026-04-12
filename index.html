@@ -582,6 +582,9 @@ nav a:last-child {
   opacity: 1 !important;
   transform: none !important;
 }
+  .services-columns {
+  grid-template-columns: 1fr;
+}
 }
 
 .logo {
@@ -914,6 +917,11 @@ html {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
+}
+  .services-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
 }
 
 .service-card {
@@ -1494,33 +1502,39 @@ body {
 
   <div class="service-card">
 
-    <h3>Střihy a úpravy</h3>
-    <ul>
-      <li>Dámské střihy</li>
-      <li>Pánské střihy</li>
-      <li>Dětské střihy</li>
-    </ul>
+  <div class="services-columns">
 
-    <h3>Barvení a techniky</h3>
-    <ul>
-      <li>Barvení</li>
-      <li>Melíry</li>
-      <li>Tónování</li>
-    </ul>
+    <div>
+      <h3>Střihy a úpravy</h3>
+      <ul>
+        <li>Dámské střihy</li>
+        <li>Pánské střihy</li>
+        <li>Dětské střihy</li>
+      </ul>
 
-    <h3>Péče o vlasy</h3>
-    <ul>
-      <li>Regenerace vlasů</li>
-      <li>Hloubková péče</li>
-      <li>Výživa vlasů</li>
-    </ul>
+      <h3>Barvení a techniky</h3>
+      <ul>
+        <li>Barvení</li>
+        <li>Melíry</li>
+        <li>Tónování</li>
+      </ul>
+    </div>
 
-    <h3>Styling</h3>
-    <ul>
-      <li>Společenské účesy</li>
-      <li>Denní styling</li>
-      <li>Úprava vousů</li>
-    </ul>
+    <div>
+      <h3>Péče o vlasy</h3>
+      <ul>
+        <li>Regenerace vlasů</li>
+        <li>Hloubková péče</li>
+        <li>Výživa vlasů</li>
+      </ul>
+
+      <h3>Styling</h3>
+      <ul>
+        <li>Společenské účesy</li>
+        <li>Denní styling</li>
+        <li>Úprava vousů</li>
+      </ul>
+    </div>
 
   </div>
 
