@@ -1215,6 +1215,34 @@ html {
   text-decoration: none;
   font-weight: 500;
 }
+  .contact-facebook {
+  text-align: center;
+  margin: 40px 0 10px;
+}
+
+.contact-facebook a {
+  font-size: 16px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.contact-facebook a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.contact-facebook a:hover::after {
+  width: 100%;
+}
 
 .contact-hours {
   margin-top: 20px;
@@ -1689,6 +1717,12 @@ body {
 
   </div>
 
+  <p class="contact-facebook">
+  <a href="https://www.facebook.com/" target="_blank">
+    Najdete nás na Facebooku
+  </a>
+</p>
+  
   <!-- MAPA -->
   <div class="map">
     <iframe 
