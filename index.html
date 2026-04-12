@@ -586,15 +586,20 @@ nav a:last-child {
   transition: all 0.6s ease;
 }
 
-.about-text.mobile-animate.show,
-.about-image.mobile-animate.show {
+/* TEXT */
+.about-text.mobile-animate.show {
   opacity: 1;
   transform: scale(1);
 }
 
+/* OBRÁZEK – lehce víc „živý“ */
+.about-image.mobile-animate {
+  transform: scale(0.92);
+}
+
 .about-image.mobile-animate.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
 }
 }
   @media (min-width: 769px) {
