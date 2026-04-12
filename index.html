@@ -1802,9 +1802,10 @@ window.addEventListener('load', () => {
   window.scrollTo(0, 0);
 });
   
-const sections = document.querySelectorAll('.mobile-animate');
+/* DESKTOP (necháme animace jak jsou) */
+const desktopSections = document.querySelectorAll('.about, .product-animate, .contact, .map');
 
-const observer = new IntersectionObserver((entries) => {
+const desktopObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
@@ -1814,8 +1815,26 @@ const observer = new IntersectionObserver((entries) => {
   threshold: 0.3
 });
 
-sections.forEach(section => {
-  observer.observe(section);
+desktopSections.forEach(section => {
+  desktopObserver.observe(section);
+});
+
+
+/* MOBILE (nové animace) */
+const mobileElements = document.querySelectorAll('.mobile-animate');
+
+const mobileObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+mobileElements.forEach(el => {
+  mobileObserver.observe(el);
 });
 
 const hamburger = document.querySelector('.hamburger');
