@@ -1501,28 +1501,31 @@ body {
     cursor: pointer;
   }
 
-  nav {
-    position: fixed;
-    top: 80px;
-    right: 0;
-    width: 75%;
-    height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    padding: 30px 25px;
-    background: white;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
-    transform: translateX(100%);
-    pointer-events: none;
-    transition: transform 0.35s ease;
-    z-index: 1000;
-  }
+  
+nav {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 75%;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px 25px;
+  background: white;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+  transform: translateX(100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.35s ease, visibility 0.35s;
+  z-index: 1000;
+}
 
-  nav.open {
-    transform: translateX(0);
-    pointer-events: auto;
-  }
+nav.open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
 
   body.menu-open::after {
     content: "";
