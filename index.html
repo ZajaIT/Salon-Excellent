@@ -1473,15 +1473,21 @@ body {
 /* TABLET – HLAVIČKA A MENU */
 @media (min-width: 769px) and (max-width: 1024px) {
 
+  
   header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 18px;
     padding: 20px 30px;
   }
 
   .header-center {
-    margin: 0 auto;
+    margin: 0;
+  }
+
+  .hamburger {
+    margin-left: auto;
   }
 
   .header-buttons {
