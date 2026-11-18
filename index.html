@@ -1470,6 +1470,65 @@ body {
   display: block;
 }
   
+/* TABLET – HLAVIČKA A MENU */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+  }
+
+  .header-center {
+    margin: 0 auto;
+  }
+
+  .header-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: block !important;
+    font-size: 28px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  nav {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 75%;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 25px;
+    background: white;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: transform 0.35s ease;
+    z-index: 1000;
+  }
+
+  nav.open {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  body.menu-open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+  }
+
+}
+
+  
 </style>
 </head>
 
